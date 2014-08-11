@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="http://code.hs-cn.com/jquery/jquery-1.3.2.min.js" type="text/javascript"></script>
+
+     <link rel="stylesheet" href="/static/css/bootstrap.css" />
+     <link rel="stylesheet" href="/static/js/bootstrap.js" />
+
+    <link rel="stylesheet" href="/static/css/bootstrap-responsive.css" />
+    {% load bootstrap_toolkit %}
+
+    {% bootstrap_stylesheet_tag %}
+    <style type="text/css">
+    .clear {clear: both;}
+    </style>
+    <style>
+    body
+    {
+
+    background-color:#cccccc;
+    }
+    div.ex
+    {
+    width:340px;
+    padding:6px;
+    border:3px solid gray;
+    margin:0px;
+
+    }
+    </style>
+    <SCRIPT>
+    function isHidden(oDiv){
+      var vDiv = document.getElementById(oDiv);
+      vDiv.style.display = (vDiv.style.display == 'none')?'block':'none';
+    }
+    function hid(){
+        var hid = document.getElementById('hid');
+        if (hid.style.display == 'none'){
+            hid.style.display = 'block'
+        }
+        else{
+            hid.style.display = 'none'
+        }
+    }
+  </SCRIPT>
+
+
+    <title></title>
+</head>
+<body>
+<div style="display:inline;">
+<!--<input type="button-info" value="折叠或者展开" onclick="hid()" class="btn btn-primary">-->
+<input type="checkbox" id="chk_all" name="chk_all" class="btn btn-primary" />全选/取消全选
+<a class="btn btn-link togglecheckbox" onclick="hid()" href="#">折叠/展开</a>
+</div>
+<div id="hid">
+<form action="" method="post">
+{%for servermanger in list %}
+<div style="width:120px; display:inline;" class="collapse"  style="height:auto;" >
+    {% csrf_token %}
+    <label class="checkbox inline span2">
+        <input type="checkbox" value={{servermanger.zone}}  class="btn btn-primary"  name="chk_list"  />  韩国 {{servermanger.zone}}服<br />
+    </label>
+</div>
+{%endfor%}
+</div>
+<div class="clear">
+<p><input type="submit" value="更新数据库" onclick="return confirm('确定修改版本吗')" class="btn btn-primary" name="value" style="vertical-align:middle"/></p>
+</div>
+</form>
+<div style="width:220px; display:block;">
+<p>反馈结果:</p>
+{%for resultlist in result %}
+   {{resultlist}}
+{%endfor%}
+</div>
+<script type="text/javascript">
+$("#chk_all").click(function(){
+     $("input[name='chk_list']").attr("checked",$(this).attr("checked"));
+});
+</script>
+
+
+
+</body>
+</html>

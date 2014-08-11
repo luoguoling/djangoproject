@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load bootstrap_toolkit %}
+
+    {% bootstrap_stylesheet_tag %}
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    body
+    {
+
+        background-color:#bbc3;
+    }
+    </style>
+    <script>
+        function hid(){
+            var hid = document.getElementById('hid');
+            if (hid.style.display == 'none'){
+                hid.style.display = 'block'
+            }
+            else{
+                hid.style.display = 'none'
+            }
+        }
+
+    </script>
+    <style type="text/css">
+    .sidebar-menu{
+        border-right: 1px solid #c4c8cb;
+    }
+    .menu-first{
+    height:45px;
+    line-height:45px;
+    background-color: #e9e9e9;
+    border-top: 1px solid #efefef;
+    border-bottom: 1px solid #e1e1e1;
+    padding: 0;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: center;
+    }
+    .menu-first:hover{
+    text-decoration: none;
+    background-color: #d6d4d5;
+    border-top: 1px solid #b7b7b7;
+    border-bottom: 1px solid #acacac;
+    }
+    .menu-second li a{
+    background-color: #f6f6f6;
+    height:31px;
+    line-height:31px;
+    border-top: 1px solid #efefef;
+    border-bottom: 1px solid #efefef;
+    font-size: 12px;
+    text-align:center;
+    }
+   .menu-second li a:hover {
+    text-decoration: none;
+    background-color: #66c3ec;
+    border-top: 1px solid #83ceed;
+    border-bottom: 1px solid #83ceed;
+    border-right: 3px solid #f8881c;
+    border-left: 3px solid #66c3ec;
+    }
+    .menu-second-selected {
+    background-color: #66c3ec;
+    height:31px;
+    line-height:31px;
+    border-top: 1px solid #83ceed;
+    border-bottom: 1px solid #83ceed;
+    border-right: 3px solid #f8881c;
+    border-left: 3px solid #66c3ec;
+    text-align:center;
+    }
+    .nav-list,.nav-list li a{
+    padding: 0px;
+    margin: 0px;
+    }
+    A:link    { text-decoration:none; color:#000000;}
+    A:visited { text-decoration:none; color:#000000;}
+    A:hover   { text-decoration:none; color:#000000;}
+    A:active  { text-decoration:none; color:#000000;}
+</style>
+<link href="/static/css/bootstrap.min.css" rel="stylesheet">
+<link href="/static/js/bootstrap.min.js" rel="stylesheet">
+</head>
+<body>
+
+<div style="background-color:#888;color:#ffff;" class="container-fluid">
+  <h4><a href="{% url 'view3' %}" target="main" title="数据库更新"  >数据库更新</a></h4></p>
+
+<p><h4><a href="{% url 'servermangerapp_list' %}" target="main" title="版本更新" class="navbar-brand">版本更新</a></h4></p>
+<p><h4><a href="{% url 'view' %}" target="main" title="php更新">php更新</a></h4></p>
+<p><h4><a href="{% url 'view1' %}" target="main" title="前端更新">前端更新</a></h4></p>
+<p><h4><a href="{% url 'view2' %}" target="main" title="版本更新">版本更新</a></h4></p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    body
+    {
+
+        background-color:#bbc3;
+    }
+    </style>
+    <script>
+        function hid(){
+            var hid = document.getElementById('hid');
+            if (hid.style.display == 'none'){
+                hid.style.display = 'block'
+            }
+            else{
+                hid.style.display = 'none'
+            }
+        }
+
+    </script>
+    <style type="text/css">
+    A:link    { text-decoration:none; color:#000000;}
+    A:visited { text-decoration:none; color:#000000;}
+    A:hover   { text-decoration:none; color:#000000;}
+    A:active  { text-decoration:none; color:#000000;}
+</style>
+    <link href="../twitter-bootstrap/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../twitter-bootstrap/bootstrap/js/bootstrap.js" rel="stylesheet">
+</head>
+<body>
+
+<p><h2><a href="{% url 'view3' %}" target="main"> <strong>数据库更新</strong></a></h2></p>
+<p><h2><a href="{% url 'servermangerapp_list' %}" target="main"><strong>版本更新</strong></a></h2></p>
+<p><h2><a href="{% url 'view' %}" target="main"><strong>php更新</strong></a></h2></p>
+<p><h2><a href="{% url 'view1' %}" target="main"><strong>前端更新</strong></a></h2></p>
+<p><h2><a href="{% url 'view2' %}" target="main"><strong>版本更新</strong></a></h2></p>
+
+</body>
+</html>

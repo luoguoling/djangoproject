@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    {% load bootstrap_toolkit %}
+     <link rel="stylesheet" href="/static/css/bootstrap.css" />
+     <link rel="stylesheet" href="/static/js/bootstrap.js" />
+</head>
+<body>
+
+<form method="post" enctype="multipart/form-data" >
+{% csrf_token %}
+{{form.as_p}}
+<input type="submit" value="ok" class="btn btn-danger"/>
+
+</form>
+&nbsp;&nbsp; <span class="fname_msg"></span>&nbsp;&nbsp;&nbsp;
+<div  class="process">
+    <span class="bar"></span>&nbsp;<span class="parent">0%</span>
+
+</div>
+</body>
+</html>
